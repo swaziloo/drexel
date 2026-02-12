@@ -4,8 +4,8 @@ to find top-recommended albums based on customer ratings.
 
 ### Setup ###
 Configure base environment:
-* Python (tested with Python3 on Debian in WSL)
-* `python3-dev` build tools
+* Install `python3` (tested with Python3 on Debian in WSL)
+* Install `python3-dev` build tools
 
 Configure Virtual Environment for testing (recommended):
 * `python3 -m venv rec_env` creates a virtual env in the current folder
