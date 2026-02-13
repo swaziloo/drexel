@@ -41,7 +41,7 @@ data = Dataset.load_from_df(df[['CustomerID', 'ASIN', 'Rating']], reader)
 
 # split set and train on 80%
 trainset, testset = train_test_split(data, test_size=0.2)
-algo = SVD(n_factors=20, reg_all=0.1)
+algo = SVD(n_factors=40, reg_all=0.05)
 algo.fit(trainset)
 
 # predict on the held-out 20%

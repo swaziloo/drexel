@@ -5,7 +5,7 @@ reader = Reader(rating_scale=(1, 5))
 data = Dataset.load_from_df(df[['CustomerID', 'ASIN', 'Rating']], reader)
 trainset = data.build_full_trainset()
 # 20 factors, stricter model
-algo = SVDpp(n_factors=20, reg_all=0.1)
+algo = SVDpp(n_factors=40, reg_all=0.05)
 algo.fit(trainset)
 
 def get_top_5(user_id):
