@@ -20,7 +20,7 @@ Install Dependencies:
 * `curl -O -L https://snap.stanford.edu/data/bigdata/amazon/amazon-meta.txt.gz` fetch the data archive
 * `gunzip amazon-meta.txt.gz` unpack the archive
 * `python3 ParseAmazonFiltered.py amazon-meta.txt` extract ratings
-* `python3 TestRecs.py` calculate the RMSE using 20% of the data set for test
+* `python3 TestRecs.py` calculate the RMSE and F1@K using 20% of the data set for test
 
 ### Prepare Test Ratings ###
 
