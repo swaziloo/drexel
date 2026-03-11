@@ -1,32 +1,41 @@
 ## Movie Match Supervised Learnig ##
 
-This demo was designed and tested in a WSL environment with python3 installed.
+This demo was designed and tested in a WSL environment on Windows 11 with python3 installed.
 
 ### Setup ###
-Download and unpack two data sets into the 'movie_data' subfolder:
+Download and unpack the two Kaggle data sets into the `movie_data` subfolder:
+
 https://www.kaggle.com/datasets/raedaddala/imdb-movies-from-1960-to-2023
+
 https://www.kaggle.com/datasets/tmdb/tmdb-movie-metadata/data
 
 ### Running the Demo ###
 
 * Ensure the `runDemo.sh` script is executable:
   * `chmod 755 runDemo.sh`
-* Execute by running it:
+* Execute it:
   * `./runDemo.sh`
 
 The first time its run, the script will create a virtual env for the demo and download a list of dependencies.
 *This may take several minutes.*
 
+Once it's complete,the supervised demo will start and load the data.
+
 ### Demo Commands ###
-* `curl -O -L https://snap.stanford.edu/data/bigdata/amazon/amazon-meta.txt.gz` fetch the data archive
-* `gunzip amazon-meta.txt.gz` unpack the archive
-* `python3 ParseAmazonFiltered.py amazon-meta.txt` extract ratings
-* `python3 TestRecs.py` calculate the RMSE and F1@K using 20% of the data set for test
+```
+=== SELECT TRANSFORMER ===
+1: MiniLM | 2: MPNet | 3: Multi-QA | Q: Quit
+```
+* Select the desired sentence transformer for the test by choosing 1, 2, or 3
 
-### Prepare Test Ratings ###
+Once the encodings are complete you'll get to the main demo choices:
 
-You can choose one of the Customer IDs from within the `customer_ratings_filtered.txt` file or add a `TESTUSER` customer to the file.
-A separate TESTUSER.tsv is available with 25 ratings. If you choose a different Customer, you need to change that value in the `FindTopRecs.py` script.
-
-### Getting Recommendations ###
-* `python3 FindTopRecs.py` provides the highest 5 ratings from the dataset.
+```
+=== SETTINGS (Model: all-MiniLM-L6-v2 | Jitter: 0%) ===
+J: New Transformer | 1: LogReg | 2: GradBoost | %: Set Jitter % |  Q: Quit
+Action:
+```
+* `J` to return to the transformer selection menu
+* `1` to train and display the results for the Logistic Regression classifier
+* `2` to train and display the results for the Gradient Boosting classifier
+* `%` followed by an integer to intentionally misalign a percentage of the 'Year' columns
