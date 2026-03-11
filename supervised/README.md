@@ -1,4 +1,4 @@
-## Movie Match Supervised Learnig ##
+## Movie Match Supervised Learning ##
 
 This demo was designed and tested in a WSL environment on Windows 11 with python3 installed.
 
