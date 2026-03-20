@@ -13,7 +13,7 @@ https://www.kaggle.com/datasets/tmdb/tmdb-movie-metadata/data
 
 ### Running the Demo ###
 
-* Ensure the `trainMatch.sh` and `runMatch.sh` scriptq are executable:
+* Ensure the `trainMatch.sh` and `runMatch.sh` scripts are executable:
     * `chmod 755 *.sh`
 * Train the matcher:
     * `./trainMatch.sh`
@@ -28,7 +28,7 @@ Edit `claude_desktop_config.json`.
 On my installation, the file is located in:
 `c:\Users\userName\AppData\Roaming\Claude`
 
-Add the following lines to the top-level list (under 'preferences' in mine)
+Add the following lines to the first-level list (under 'preferences' in mine)
 ```
   ,
   "mcpServers": {
@@ -41,8 +41,12 @@ Add the following lines to the top-level list (under 'preferences' in mine)
     }
   }
 ```
-* Note the leading comma--you're adding this json map to the existing document.
-* Correct the path if you haven't checked out the code into this location
+* Note the leading comma--you're adding this json map inside the existing (outer brackets) document.
+* Correct the path to match the location where you've checked out the code
 
-Restart Claude Desktop:
+### Restart Claude Desktop ###
 * Use File->Exit as just closing the window may not restart the desktop app
+
+### Query for Movies ###
+* Ask Claude to use movie_matcher to find a movie title by giving it a description and year in your text.
+* Provide structured text with markup around the description and the year
