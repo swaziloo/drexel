@@ -78,7 +78,7 @@ mask_out = train_df.sample(frac=0.05, random_state=220).index
 train_df.loc[mask_out, 'Year'] = np.random.choice([1900, 2026, 1970, 2025], size=len(mask_out))
 
 # encode and extract features
-print("Calculating similarity scores for training..."
+print("Calculating similarity scores for training...")
 emb_train_tmdb = transformer.encode(train_df['overview'].tolist(), show_progress_bar=True)
 emb_train_imdb = transformer.encode(train_df['description'].tolist(), show_progress_bar=True)
 train_df['similarity_score'] = util.cos_sim(emb_train_tmdb, emb_train_imdb).diag().tolist()

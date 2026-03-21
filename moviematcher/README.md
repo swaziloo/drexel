@@ -1,6 +1,6 @@
 ## TMDB Movie Matcher MCP Service ##
 
-This demo was designed and tested using Claude Desktop with a WSL environment on Windows 11 with python3 installed.
+This demo was designed and tested using Claude Desktop with a WSL environment on Windows 11 with python3 (and maybe python3-venv) installed.
 
 ### Setup ###
 Download and unpack the two Kaggle data sets into the `movie_data` subfolder:
@@ -18,7 +18,7 @@ https://www.kaggle.com/datasets/tmdb/tmdb-movie-metadata/data
 * Train the matcher:
     * `./trainMatch.sh`
 
-The first time its run, the script will create a virtual env for the demo and download a list of dependencies.
+The first time it's run, the script will create a virtual env for the demo and download a list of dependencies.
 *This may take several minutes.*
 
 After completion, the embeddings, clean movie data, and joblib files will be present.
@@ -42,6 +42,7 @@ Add the following lines to the first-level list (under 'preferences' in mine)
   }
 ```
 * Note the leading comma--you're adding this json map inside the existing (outer brackets) document.
+* You may need to adjust the `-d` distribution for your flavor of Linux. 'Ubuntu' is common--I'm using 'debian'
 * Correct the path to match the location where you've checked out the code
 
 ### Restart Claude Desktop ###
